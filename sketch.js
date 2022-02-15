@@ -1,25 +1,16 @@
-let topVar;
+let topVar = [];
 let bottomVar;
 let shoesVar;
 
-let top;
-let bottom;
-let shoes;
-
-//let topChoices = []
-//let bottomChoices = []
+let topChoices = 3;
+let bottomChoices = 3
 //let shoesChoices = []
 
 function preload() {
-  topVar = [
-    "/images/faketop1.png",
-    "/images/faketop2.png",
-    "/images/faketop3.png"
-  ];
-
-  let topPick = floor(random(topVar.length));
-
-  top = loadImage(topVar[pos]);
+  let top1 = loadImage('/images/fakeTop1.png');
+  let top2 = loadImage('/images/fakeTop2.png');
+  let top3 = loadImage('/images/fakeTop3.png');
+  topVar = [top1, top2, top3];
 }
 
 
@@ -30,5 +21,9 @@ function setup() {
 function draw() {
   background(220);
 
-  image(top, 0, 0);
+  imageMode(CENTER);
+  let top = random(topVar);
+  image(top, 450, 150);
+
+  noLoop();
 }
